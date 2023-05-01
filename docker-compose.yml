@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:11.7
+    ports:
+      - "5432:5432"
+    container_name: db-postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    healthcheck:
+      timeout: 45s
+      interval: 10s
+      retries: 10
